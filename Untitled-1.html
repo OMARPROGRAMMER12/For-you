@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        body {
+            background: url('https://www.toptal.com/designers/subtlepatterns/uploads/agedpaper.png');
+            background-size: cover;
+            color: #4b2e1e;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            padding: 50px;
+        }
+        .closed-letter {
+            width: 250px;
+            height: 150px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Envelope_%28PSF%29.svg/800px-Envelope_%28PSF%29.svg.png'); /* New closed letter image */
+            background-size: cover;
+            margin: auto;
+            position: relative;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .letter {
+            background: rgba(255, 248, 220, 0.9);
+            padding: 40px;
+            width: 60%;
+            margin: auto;
+            font-size: 22px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 2px solid #4b2e1e;
+            display: none;
+        }
+        .letter:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            color: red;
+            transition: 0.3s;
+        }
+        .heart:hover {
+            text-shadow: 0 0 20px red;
+        }
+        .hidden-message {
+            display: none;
+            font-size: 28px;
+            margin-top: 20px;
+            color: darkred;
+            font-style: italic;
+        }
+        .signature {
+            font-size: 26px;
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Mother's Day</h1>
+    <div class="closed-letter" onclick="openLetter()"></div>
+    <div class="letter" id="letter">
+        <p>Dear Mom,</p>
+        <p>
+            From the moment I opened my eyes to this world, your love has been my guiding light. 
+            Through every joy and every hardship, you stood beside me, offering warmth, strength, and kindness. 
+            Your voice is the melody that calms my heart, and your hands have built the foundation of my dreams.
+        </p>
+        <p>
+            Every hug, every lesson, every sacrifice—etched in my soul like the ink of a timeless letter. 
+            You are my safe haven, my first home, my greatest teacher. 
+            No words can truly capture the depth of my gratitude, but today, I hope you feel the love I carry for you every single day.
+        </p>
+        <p>
+            I promise to cherish you always, to make you proud, and to honor the love you have given me.
+        </p>
+        <p class="signature">Yours forever, Omar</p>
+        <div>
+            <p class="heart" onclick="showLove()">❤️</p>
+            <p id="loveMessage" class="hidden-message">I love you, Mom! ❤️</p>
+        </div>
+    </div>
+    <audio id="paperSound" src="https://www.soundjay.com/paper/sounds/paper-ruffle-1.mp3"></audio>
+    <script>
+        function openLetter() {
+            document.querySelector('.closed-letter').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+            document.getElementById('paperSound').play();
+        }
+        function showLove() {
+            document.getElementById('loveMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
